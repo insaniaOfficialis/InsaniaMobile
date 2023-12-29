@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Pages.Base.Authorization"
+             Title="Authorization"
+             Background="{StaticResource MainBackground}">
+    <StackLayout Orientation="Vertical"
+                 Spacing="100"
+                 Margin="10,150,10,10"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Start">
+        <Label x:Name="Title"
+               Text="Insania"
+               HorizontalOptions="Center"
+               Style="{StaticResource Title}"/>
+        <Border Background="{StaticResource White1}">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+            <Label x:Name="Name"
+                   Text="Insania"
+                   HorizontalOptions="Center"/>
+        </Border>
+    </StackLayout>
+</ContentPage>
