@@ -17,7 +17,6 @@ public partial class MainPage : ContentPage
 
         ToAuthorization(null, null);
     }
-
     private async void ToAuthorization(object? sender, EventArgs? e)
     {
         await Navigation.PushModalAsync(new Authorization());
