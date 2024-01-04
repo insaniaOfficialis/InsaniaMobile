@@ -7,7 +7,7 @@
     <Style TargetType="Entry" x:Key="EntryPrimary">
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="{OnIdiom Desktop=18, Phone=15}"/>
-        <Setter Property="TextColor" Value="{StaticResource White1}"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
         <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
     </Style>
 

@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
-<ResourceDictionary 
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Style TargetType="Button" x:Key="ButtonPrimary">
-        <Setter Property="Background" Value="{StaticResource White1}"/>
+    <Style x:Key="ButtonPrimary" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryButton}"/>
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="{OnIdiom Desktop=18, Phone=15}"/>
-        <Setter Property="TextColor" Value="{StaticResource Gray1}"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryBackground}"/>
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource SecondaryButton}"/>
+            </Trigger>
+            <Trigger TargetType="Button" Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="{StaticResource PrimaryButton}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

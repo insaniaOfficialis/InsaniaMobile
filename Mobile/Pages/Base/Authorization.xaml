@@ -22,7 +22,7 @@
                    Style="{StaticResource EntryPrimary}"/>
             <BoxView HeightRequest="1"
                      WidthRequest="360"
-                     Color="{StaticResource White1}"/>
+                     Color="{StaticResource PrimaryText}"/>
         </StackLayout>
         <StackLayout>
             <Entry x:Name="Password"
@@ -34,14 +34,19 @@
                    Style="{StaticResource EntryPrimary}"/>
             <BoxView HeightRequest="1"
                      WidthRequest="360"
-                     Color="{StaticResource White1}"/>
+                     Color="{StaticResource PrimaryText}"/>
         </StackLayout>
         <Button x:Name="Authorize"
                 Margin="0,50,0,0"
                 HeightRequest="50"
                 WidthRequest="360"
                 Text="Войти"
-                Style="{StaticResource ButtonPrimary}">
+                Style="{StaticResource ButtonPrimary}"
+                Clicked="Authorize_Clicked">
         </Button>
+        <Label x:Name="Error"
+               Margin="0,15,0,0"
+               HorizontalOptions="Center"
+               Style="{StaticResource ErrorPrimary}"/>
     </StackLayout>
 </ContentPage>

@@ -1,4 +1,4 @@
-﻿using Mobile.Pages.Base;
+﻿using Authorization = Mobile.Pages.Base.Authorization;
 
 namespace Mobile;
 

@@ -1,24 +1,47 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System.Reflection;
+using Services.Identification.Authorization;
 
 namespace Mobile;
 
+/// <summary>
+/// Запускаем класс программы
+/// </summary>
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp()
+    /// <summary>
+    /// Метод создания приложения
+    /// </summary>
+    /// <returns></returns>
+    public static MauiApp? CreateMauiApp()
     {
-        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("Borderless", (handler, view) =>
+        //Убираем подчёркивания у полей ввода
+        Microsoft.Maui.Handlers.EntryHandler.Mapper
+            .AppendToMapping("Borderless", (handler, view) =>
         {
 #if ANDROID
-        handler.PlatformView.Background = null;
-        handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
-        handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList
+            handler.PlatformView.Background = null;
+            handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+            handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList
             .ValueOf(Android.Graphics.Color.Transparent);
 #elif WINDOWS
             handler.PlatformView.BorderThickness = new Microsoft.UI.Xaml.Thickness(0);
 #endif
         });
 
+        //Формируем приложение
         var builder = MauiApp.CreateBuilder();
+
+        //Устанавливаем конфигурацию
+        var assembly = Assembly.GetExecutingAssembly();
+        using var stream = assembly.GetManifestResourceStream("Mobile.appsettings.json");
+        var config = new ConfigurationBuilder()
+            .AddJsonStream(stream!)
+            .Build();
+        builder.Configuration.AddConfiguration(config);
+
+        //Устанавливаем шрифты
         builder
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
@@ -30,9 +53,14 @@ public static class MauiProgram
             });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        //Добавляем логироваение
+        builder.Logging.AddDebug();
 #endif
 
+        //Добавляем сервисы
+        builder.Services.AddScoped<IAuthorization, Authorization>(); //авторизация
+
+        //Строим приложение
         return builder.Build();
     }
 }
