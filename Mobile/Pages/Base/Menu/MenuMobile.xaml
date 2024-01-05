@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Pages.Base.Menu.MenuMobile">
+    <StackLayout VerticalOptions="End">
+        <BoxView x:Name="MenuLine"
+                 HeightRequest="0.5"
+                 Color="{StaticResource PrimaryText}"/>
+        <Border x:Name="Menu"
+                Stroke="{StaticResource SecondaryBackground}"
+                BackgroundColor="{StaticResource SecondaryBackground}">
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Spacing="50"
+                         Padding="0,5,0,5">
+                <Button x:Name="Main"
+                        ImageSource="castle.svg"
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Main_Clicked"/>
+                <Button x:Name="Message"
+                        ImageSource="crow.svg"
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Message_Clicked"/>
+                <Button x:Name="Mechanics"
+                        ImageSource="dice.svg"
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Mechanics_Clicked"/>
+                <Button x:Name="Information"
+                        ImageSource="book.svg"
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Information_Clicked"/>
+            </StackLayout>
+        </Border>
+    </StackLayout>
+</ContentView>

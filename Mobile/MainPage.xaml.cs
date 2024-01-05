@@ -17,6 +17,12 @@ public partial class MainPage : ContentPage
 
         ToAuthorization(null, null);
     }
+
+    /// <summary>
+    /// Метод перехода на страницу авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void ToAuthorization(object? sender, EventArgs? e)
     {
         await Navigation.PushModalAsync(new Authorization());

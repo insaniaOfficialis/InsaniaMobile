@@ -1,6 +1,4 @@
-﻿using Services.Identification.Authorization;
-
-namespace Mobile;
+﻿namespace Mobile;
 
 /// <summary>
 /// Основной класс приложения
@@ -29,14 +27,21 @@ public partial class App : Application
     /// </summary>
     public App(IServiceProvider services)
     {
-        //Инициализируем компоненты
-        InitializeComponent();
+        try
+        {
+            //Инициализируем компоненты
+            InitializeComponent();
 
-        //Получаем коллекцию сервисов
-        Services = services;
+            //Получаем коллекцию сервисов
+            Services = services;
 
-        //Устанавливаем основную страницу
-        MainPage = new AppShell();
+            //Устанавливаем основную страницу
+            MainPage = new AppShell();
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 
     /// <summary>
@@ -44,16 +49,26 @@ public partial class App : Application
     /// </summary>
     /// <param name="activationState"></param>
     /// <returns></returns>
+#pragma warning disable CS8765 // Допустимость значений NULL для типа параметра не соответствует переопределенному элементу (возможно, из-за атрибутов допустимости значений NULL).
     protected override Window CreateWindow(IActivationState activationState)
+#pragma warning restore CS8765 // Допустимость значений NULL для типа параметра не соответствует переопределенному элементу (возможно, из-за атрибутов допустимости значений NULL).
     {
-        //Задаём окно
-        var window = base.CreateWindow(activationState);
+        try
+        {
+            //Задаём окно
+            var window = base.CreateWindow(activationState);
 
-        //Устанавливаем высоту и ширину
-        window.Width = Width;
-        window.Height = Height;
+            //Устанавливаем высоту и ширину
+            window.Width = Width;
+            window.Height = Height;
 
-        //Возвращаем окно
-        return window;
+            //Возвращаем окно
+            return window;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return new Window();
+        }
     }
 }

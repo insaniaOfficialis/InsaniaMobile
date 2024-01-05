@@ -12,10 +12,11 @@
             <Trigger TargetType="Button" Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="{StaticResource SecondaryButton}"/>
             </Trigger>
-            <Trigger TargetType="Button" Property="IsPressed" Value="False">
-                <Setter Property="Background" Value="{StaticResource PrimaryButton}"/>
-            </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonSecondary" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
     </Style>
 
 </ResourceDictionary>

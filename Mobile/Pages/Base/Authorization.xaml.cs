@@ -1,3 +1,4 @@
+using Mobile.Pages.Base.Main;
 using Services.Identification.Authorization;
 
 namespace Mobile.Pages.Base;
@@ -13,16 +14,36 @@ public partial class Authorization : ContentPage
 	private readonly IAuthorization? _authorization;
 
 	/// <summary>
-	/// Конструктор страницы авторизации
+	/// Константная ширина элементов для пк
 	/// </summary>
-	public Authorization()
+	private const int WidhtElementDesktop = 360;
+
+    /// <summary>
+    /// Конструктор страницы авторизации
+    /// </summary>
+    public Authorization()
 	{
 		//Инициализируем компоненты
 		InitializeComponent();
 
+		//Устанавливаем отступы
+		if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+			Padding = new Thickness(15, 0, 15, 0);
+		else
+		{
+			if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
+			{
+				Login.WidthRequest = WidhtElementDesktop;
+				LoginLine.WidthRequest = WidhtElementDesktop;
+				Password.WidthRequest = WidhtElementDesktop;
+				PasswordLine.WidthRequest = WidhtElementDesktop;
+				Authorize.WidthRequest = WidhtElementDesktop;
+			}
+		}
+
 		//Получаем сервис авторизации
 		_authorization = App.Services?.GetService<IAuthorization>();
-	}
+    }
 
 	/// <summary>
 	/// Событие нажатия на кнопку авторизации
@@ -33,16 +54,48 @@ public partial class Authorization : ContentPage
     {
 		try
 		{
+            //Запускаем колесо загрузки
+            Content.IsVisible = false;
+            Load.IsRunning = true;
+
 			//Обнуляем текст ошибки
 			Error.Text = null;
 
 			//Вызываем метод авторизации
 			var result = await _authorization?.Handler(Login.Text, Password.Text)!;
+
+			//Если получили токен, переходим на главную страницу
+			if(!string.IsNullOrEmpty(result.Token))
+				ToMain(sender, e);
 		}
 		catch(Exception ex)
         {
+            //Возвращаем видимость элементов
+            Content.IsVisible = true;
+
             //Устанавливаем текст ошибки
             Error.Text = ex.Message;
         }
+		finally
+		{
+            //Остакнавливаем колесо загрузки
+            Load.IsRunning = false;
+        }
+    }
+
+    /// <summary>
+    /// Метод перехода на страницу авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ToMain(object? sender, EventArgs? e)
+    {
+		//Если текущая платформа - пк
+		if(DeviceInfo.Idiom == DeviceIdiom.Desktop)
+			await Navigation.PushModalAsync(new MainDestop());
+
+		//Если текущая платфора - телефон
+		if(DeviceInfo.Idiom == DeviceIdiom.Phone)
+            await Navigation.PushModalAsync(new MainMobile());
     }
 }

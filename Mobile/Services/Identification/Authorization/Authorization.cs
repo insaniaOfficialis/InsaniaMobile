@@ -63,6 +63,7 @@ public class Authorization : IAuthorization
 
             if (ValidateData(respose))
             {
+                _configuration["Token"] = respose!.Token;
                 return respose!;
             }
             else
