@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mobile.Pages.Base.Menu.MenuMobile">
+             x:Class="Mobile.Pages.Base.Menu.BottomMenuMobile">
     <StackLayout VerticalOptions="End">
         <BoxView x:Name="MenuLine"
                  HeightRequest="0.5"
@@ -15,19 +15,19 @@
                          Spacing="50"
                          Padding="0,5,0,5">
                 <Button x:Name="Main"
-                        ImageSource="castle.svg"
+                        ImageSource="castle.png"
                         Style="{StaticResource ButtonSecondary}"
                         Clicked="Main_Clicked"/>
                 <Button x:Name="Message"
-                        ImageSource="crow.svg"
+                        ImageSource="crow.png"
                         Style="{StaticResource ButtonSecondary}"
                         Clicked="Message_Clicked"/>
                 <Button x:Name="Mechanics"
-                        ImageSource="dice.svg"
+                        ImageSource="dice.png"
                         Style="{StaticResource ButtonSecondary}"
                         Clicked="Mechanics_Clicked"/>
                 <Button x:Name="Information"
-                        ImageSource="book.svg"
+                        ImageSource="book.png"
                         Style="{StaticResource ButtonSecondary}"
                         Clicked="Information_Clicked"/>
             </StackLayout>

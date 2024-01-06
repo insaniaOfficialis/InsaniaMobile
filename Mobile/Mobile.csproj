@@ -94,16 +94,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Base\Main.xaml.cs">
+	    <DependentUpon>Main.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Base\Menu\BottomMenuMobile.xaml.cs">
+	    <DependentUpon>BottomMenuMobile.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\Base\Authorization.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Base\Main\MainDestop.xaml">
+	  <MauiXaml Update="Pages\Base\Main.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Base\Main\MainMobile.xaml">
+	  <MauiXaml Update="Pages\Base\Menu\MenuDesktop.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Base\Menu\MenuMobile.xaml">
+	  <MauiXaml Update="Pages\Base\Menu\BottomMenuMobile.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Base\Menu\TopMenuMobile.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Buttons.xaml">

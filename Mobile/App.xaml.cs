@@ -44,31 +44,11 @@ public partial class App : Application
         }
     }
 
-    /// <summary>
-    /// Переопределеяем метод создания окна
-    /// </summary>
-    /// <param name="activationState"></param>
-    /// <returns></returns>
-#pragma warning disable CS8765 // Допустимость значений NULL для типа параметра не соответствует переопределенному элементу (возможно, из-за атрибутов допустимости значений NULL).
     protected override Window CreateWindow(IActivationState activationState)
-#pragma warning restore CS8765 // Допустимость значений NULL для типа параметра не соответствует переопределенному элементу (возможно, из-за атрибутов допустимости значений NULL).
     {
-        try
-        {
-            //Задаём окно
-            var window = base.CreateWindow(activationState);
-
-            //Устанавливаем высоту и ширину
-            window.Width = Width;
-            window.Height = Height;
-
-            //Возвращаем окно
-            return window;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            return new Window();
-        }
+        var window = base.CreateWindow(activationState);
+        window.MinimumHeight = Height;
+        window.MinimumWidth = Width;
+        return window;
     }
 }

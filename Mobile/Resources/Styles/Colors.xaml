@@ -59,4 +59,11 @@
         </GradientStopCollection>
     </RadialGradientBrush>
 
+    <LinearGradientBrush x:Key="AvatarBorderGradient" StartPoint="0,0" EndPoint="1,0.7">
+        <GradientStopCollection>
+            <GradientStop Offset="0" Color="{StaticResource SecondaryButton}"/>
+            <GradientStop Offset="1" Color="{StaticResource PrimaryBackground}"/>
+        </GradientStopCollection>
+    </LinearGradientBrush>
+
 </ResourceDictionary>

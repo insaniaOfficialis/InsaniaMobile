@@ -16,7 +16,34 @@
     </Style>
 
     <Style x:Key="ButtonSecondary" TargetType="Button">
+        <Setter Property="CornerRadius" Value="0"/>
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="{OnIdiom Desktop=15, Phone=15}"/>
+        <Setter Property="TextColor" Value="{StaticResource SecondaryButton}"/>
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource SecondaryButton}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonThird" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="100"/>
+    </Style>
+
+    <Style x:Key="ButtonFourth" TargetType="Button">
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="{OnIdiom Desktop=15, Phone=15}"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource SecondaryButton}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

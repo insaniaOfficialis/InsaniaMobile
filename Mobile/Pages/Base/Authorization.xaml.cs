@@ -1,4 +1,3 @@
-using Mobile.Pages.Base.Main;
 using Services.Identification.Authorization;
 
 namespace Mobile.Pages.Base;
@@ -58,8 +57,14 @@ public partial class Authorization : ContentPage
             Content.IsVisible = false;
             Load.IsRunning = true;
 
-			//Обнуляем текст ошибки
-			Error.Text = null;
+            //Убираем клавитауру
+            Login.IsEnabled = false;
+            Login.IsEnabled = true;
+            Password.IsEnabled = false;
+            Password.IsEnabled = true;
+
+            //Обнуляем текст ошибки
+            Error.Text = null;
 
 			//Вызываем метод авторизации
 			var result = await _authorization?.Handler(Login.Text, Password.Text)!;
@@ -90,12 +95,6 @@ public partial class Authorization : ContentPage
     /// <param name="e"></param>
     private async void ToMain(object? sender, EventArgs? e)
     {
-		//Если текущая платформа - пк
-		if(DeviceInfo.Idiom == DeviceIdiom.Desktop)
-			await Navigation.PushModalAsync(new MainDestop());
-
-		//Если текущая платфора - телефон
-		if(DeviceInfo.Idiom == DeviceIdiom.Phone)
-            await Navigation.PushModalAsync(new MainMobile());
+		await Navigation.PushModalAsync(new Main());
     }
 }

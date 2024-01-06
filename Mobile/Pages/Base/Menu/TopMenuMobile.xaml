@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Pages.Base.Menu.TopMenuMobile">
+    <StackLayout Margin="15,20,15,0"
+                 Orientation="Horizontal"
+                 HorizontalOptions="Center"
+                 Spacing="55">
+        <StackLayout Orientation="Horizontal"
+                     Spacing="10"
+                     HorizontalOptions="Start">
+            <Border MinimumWidthRequest="50"
+                    MaximumWidthRequest="50"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource AvatarBorderGradient}"
+                    StrokeThickness="5"
+                    StrokeShape="RoundRectangle 100,100,100,100">
+                <Button x:Name="Avatar"
+                        Style="{StaticResource ButtonThird}"/>
+            </Border>
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="Center">
+                <Label x:Name="UserName"
+                       Text="Altair"
+                       Style="{StaticResource TextPrimary}"/>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="5">
+                    <Label x:Name="CharacterName"
+                           Text="Клаавин IV из дома Миритрант"
+                           Style="{StaticResource TextSecondary}"/>
+                    <Image x:Name="SelectCharacter"
+                           Source="arrow.png"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="End">
+            <Button x:Name="Notification"
+                    ImageSource="notification.png"
+                    Style="{StaticResource ButtonSecondary}"
+                    Clicked="Notification_Clicked"/>
+            <Button x:Name="Bar"
+                    ImageSource="bar.png"
+                    Style="{StaticResource ButtonSecondary}"
+                    Clicked="Bar_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

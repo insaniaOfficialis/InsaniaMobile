@@ -10,10 +10,22 @@
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
     </Style>
 
-    <Style x:Key="TextPrimary" TargetType="Label">
+    <Style x:Key="TitleSecondary" TargetType="Label">
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="{OnIdiom Desktop=30, Phone=30}"/>
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
+    </Style>
+
+    <Style x:Key="TextPrimary" TargetType="Label">
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="{OnIdiom Desktop=15, Phone=15}"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
+    </Style>
+
+    <Style x:Key="TextSecondary" TargetType="Label">
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="{OnIdiom Desktop=10, Phone=10}"/>
+        <Setter Property="TextColor" Value="{StaticResource SecondaryButton}"/>
     </Style>
 
     <Style x:Key="ErrorPrimary" TargetType="Label">

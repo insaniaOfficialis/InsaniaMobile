@@ -15,6 +15,7 @@ public partial class MainPage : ContentPage
         //Инициализируем компоненты
         InitializeComponent();
 
+        //Переходим к странице авторизации
         ToAuthorization(null, null);
     }
 

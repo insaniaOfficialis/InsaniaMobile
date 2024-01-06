@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:menu="clr-namespace:Mobile.Pages.Base.Menu"
+             x:Class="Mobile.Pages.Base.Menu.MenuDesktop"
+             HorizontalOptions="Start"
+             Background="{StaticResource SecondaryBackground}">
+    <Grid VerticalOptions="Fill" RowDefinitions="*,Auto">
+        <VerticalStackLayout Grid.Row="0"
+                             VerticalOptions="Start">
+            <menu:TopMenuMobile/>
+            <VerticalStackLayout Spacing="10">
+                <Button x:Name="Main"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0, 30, 0, 0"
+                        Padding="15, 13, 219, 13"
+                        ImageSource="castle.png"
+                        Text="Главная"
+                        Style="{StaticResource ButtonSecondary}"/>
+                <Button x:Name="Message"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="15, 13, 227, 13"
+                        ImageSource="crow.png"
+                        Text="Посты"
+                        Style="{StaticResource ButtonSecondary}"/>
+                <Button x:Name="Mechanics"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="15, 13, 200, 13"
+                        ImageSource="dice.png"
+                        Text="Механики"
+                        Style="{StaticResource ButtonSecondary}"/>
+                <Button x:Name="Information"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="15, 13, 182, 13"
+                        ImageSource="book.png"
+                        Text="Информация"
+                        Style="{StaticResource ButtonSecondary}"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1"
+                             VerticalOptions="End">
+            <BoxView Margin="0, 150, 0, 0"
+                     WidthRequest="300"
+                     HeightRequest="1"/>
+            <Button x:Name="InformationArticles"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0, 30, 0, 0"
+                    Padding="15, 13, 224, 13"
+                    ImageSource="faq.png"
+                    Text="Справка"
+                    Style="{StaticResource ButtonFourth}"/>
+            <Button x:Name="Settings"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="15, 13, 207, 13"
+                    ImageSource="settings.png"
+                    Text="Настройки"
+                    Style="{StaticResource ButtonFourth}"/>
+            <Button x:Name="Tasks"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="15, 13, 173, 13"
+                    ImageSource="tasks.png"
+                    Text="Тех. поддержка"
+                    Style="{StaticResource ButtonFourth}"/>
+            <Button x:Name="Out"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="15, 13, 237, 13"
+                    ImageSource="out.png"
+                    Text="Выход"
+                    Style="{StaticResource ButtonFourth}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>

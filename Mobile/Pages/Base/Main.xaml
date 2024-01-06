@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mobile.Pages.Base.MainDestop"
-             Title="MainDestop"
+             x:Class="Mobile.Pages.Base.Main"
+             Title="Main"
              Background="{StaticResource MainBackground}">
+    <Grid x:Name="Page"
+          RowDefinitions="*, Auto">
+        <HorizontalStackLayout x:Name="Content">
+
+        </HorizontalStackLayout>
+    </Grid>
 </ContentPage>
