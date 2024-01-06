@@ -3,7 +3,7 @@
 namespace Services.Identification.Authorization;
 
 /// <summary>
-/// Интерфейцс авторизации
+/// Интерфейс авторизации
 /// </summary>
 public interface IAuthorization
 {

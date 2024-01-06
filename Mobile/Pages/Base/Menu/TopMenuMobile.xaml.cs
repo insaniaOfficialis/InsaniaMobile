@@ -66,5 +66,21 @@ public partial class TopMenuMobile : ContentView
             //Устанавливаем свойство кнопки меню
             Bar.Background = (RadialGradientBrush)color;
         }
+
+        //Удаляем токен
+        SecureStorage.Default.Remove("token");
+
+        //Переходим на страницу авторизации
+        ToAuthorization(sender, e);
+    }
+
+    /// <summary>
+    /// Метод перехода на страницу авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ToAuthorization(object? sender, EventArgs? e)
+    {
+        await Navigation.PushModalAsync(new Authorization());
     }
 }

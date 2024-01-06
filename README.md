@@ -11,6 +11,7 @@
     * Horizontal/Vertical Options
     * Widght/Height
     * Backgrounds
+    * Loaded
   * Grid:
     * x:Name/x:Uid
     * Grid.Row/Column
@@ -37,6 +38,7 @@
     * TextColor
     * Image/Text
     * Style
+    * Clicked
   * BoxView:
     * Grid.Row/Column
     * Margin/Padding

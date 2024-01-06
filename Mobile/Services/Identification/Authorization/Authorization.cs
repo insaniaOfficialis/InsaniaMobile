@@ -21,7 +21,7 @@ public class Authorization : IAuthorization
     private readonly JsonSerializerOptions _settings = new();
 
     /// <summary>
-    /// Конструктор сервсиса авторизации
+    /// Конструктор сервиса авторизации
     /// </summary>
     /// <param name="configuration"></param>
     public Authorization(IConfiguration configuration)
@@ -63,7 +63,8 @@ public class Authorization : IAuthorization
 
             if (ValidateData(respose))
             {
-                _configuration["Token"] = respose!.Token;
+                //Записываем токен
+                await SecureStorage.Default.SetAsync("token", respose!.Token!);
                 return respose!;
             }
             else

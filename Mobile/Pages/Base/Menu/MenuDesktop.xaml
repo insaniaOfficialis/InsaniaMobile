@@ -5,7 +5,8 @@
              x:Class="Mobile.Pages.Base.Menu.MenuDesktop"
              HorizontalOptions="Start"
              Background="{StaticResource SecondaryBackground}">
-    <Grid VerticalOptions="Fill" RowDefinitions="*,Auto">
+    <Grid VerticalOptions="Fill"
+          RowDefinitions="*,Auto">
         <VerticalStackLayout Grid.Row="0"
                              VerticalOptions="Start">
             <menu:TopMenuMobile/>
@@ -16,31 +17,34 @@
                         Padding="15, 13, 219, 13"
                         ImageSource="castle.png"
                         Text="Главная"
-                        Style="{StaticResource ButtonSecondary}"/>
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Main_Clicked"/>
                 <Button x:Name="Message"
                         HorizontalOptions="FillAndExpand"
                         Padding="15, 13, 227, 13"
                         ImageSource="crow.png"
                         Text="Посты"
-                        Style="{StaticResource ButtonSecondary}"/>
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Message_Clicked"/>
                 <Button x:Name="Mechanics"
                         HorizontalOptions="FillAndExpand"
                         Padding="15, 13, 200, 13"
                         ImageSource="dice.png"
                         Text="Механики"
-                        Style="{StaticResource ButtonSecondary}"/>
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Mechanics_Clicked"/>
                 <Button x:Name="Information"
                         HorizontalOptions="FillAndExpand"
                         Padding="15, 13, 182, 13"
                         ImageSource="book.png"
                         Text="Информация"
-                        Style="{StaticResource ButtonSecondary}"/>
+                        Style="{StaticResource ButtonSecondary}"
+                        Clicked="Information_Clicked"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1"
                              VerticalOptions="End">
-            <BoxView Margin="0, 150, 0, 0"
-                     WidthRequest="300"
+            <BoxView WidthRequest="300"
                      HeightRequest="1"/>
             <Button x:Name="InformationArticles"
                     HorizontalOptions="FillAndExpand"
@@ -63,10 +67,12 @@
                     Style="{StaticResource ButtonFourth}"/>
             <Button x:Name="Out"
                     HorizontalOptions="FillAndExpand"
+                    Margin="0,0,0,30"
                     Padding="15, 13, 237, 13"
                     ImageSource="out.png"
                     Text="Выход"
-                    Style="{StaticResource ButtonFourth}"/>
+                    Style="{StaticResource ButtonFourth}"
+                    Clicked="Out_Clicked"/>
         </VerticalStackLayout>
     </Grid>
 </ContentView>

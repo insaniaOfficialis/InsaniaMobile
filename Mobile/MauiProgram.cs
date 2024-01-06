@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Mobile.Services.General.CheckConnection;
 using Services.Identification.Authorization;
 using System.Reflection;
 
@@ -61,6 +62,7 @@ public static class MauiProgram
 
             //Добавляем сервисы
             builder.Services.AddScoped<IAuthorization, Authorization>(); //авторизация
+            builder.Services.AddScoped<ICheckConnection, CheckConnection>(); //проверка соединения
 
             //Строим приложение
             return builder.Build();

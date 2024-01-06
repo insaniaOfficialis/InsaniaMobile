@@ -11,9 +11,9 @@ public partial class Main : ContentPage
 	/// Конструктор главной страницы
 	/// </summary>
 	public Main()
-	{
-		//Инициализируем компоненты
-		InitializeComponent();
+    {
+        //Инициализируем компоненты
+        InitializeComponent();
 
         //Если мобильное устройство
 		if(DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -47,5 +47,14 @@ public partial class Main : ContentPage
             };
             Content.Children.Add(menu);
         }
+    }
+
+    /// <summary>
+    /// Метод нажатия кнопки назад
+    /// </summary>
+    /// <returns></returns>
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
     }
 }

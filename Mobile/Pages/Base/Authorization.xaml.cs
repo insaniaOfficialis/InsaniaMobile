@@ -1,3 +1,4 @@
+using Mobile.Services.General.CheckConnection;
 using Services.Identification.Authorization;
 
 namespace Mobile.Pages.Base;
@@ -12,18 +13,23 @@ public partial class Authorization : ContentPage
 	/// </summary>
 	private readonly IAuthorization? _authorization;
 
-	/// <summary>
-	/// Константная ширина элементов для пк
-	/// </summary>
-	private const int WidhtElementDesktop = 360;
+    /// <summary>
+    /// Сервис проверки соединения
+    /// </summary>
+    private readonly ICheckConnection? _checkConnection;
+
+    /// <summary>
+    /// Константная ширина элементов для пк
+    /// </summary>
+    private const int WidhtElementDesktop = 360;
 
     /// <summary>
     /// Конструктор страницы авторизации
     /// </summary>
     public Authorization()
-	{
-		//Инициализируем компоненты
-		InitializeComponent();
+    {
+        //Инициализируем компоненты
+        InitializeComponent();
 
 		//Устанавливаем отступы
 		if (DeviceInfo.Idiom == DeviceIdiom.Phone)
@@ -40,15 +46,52 @@ public partial class Authorization : ContentPage
 			}
 		}
 
-		//Получаем сервис авторизации
+		//Получаем сервисы
 		_authorization = App.Services?.GetService<IAuthorization>();
+        _checkConnection = App.Services?.GetService<ICheckConnection>();
     }
 
-	/// <summary>
-	/// Событие нажатия на кнопку авторизации
-	/// </summary>
-	/// <param name="sender"></param>
-	/// <param name="e"></param>
+    /// <summary>
+    /// Событие загрузки окна
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ContentPage_Loaded(object sender, EventArgs e)
+    {
+        //Если есть сервис проверки соединения
+        if (_checkConnection != null)
+        {
+            try
+            {
+                //Запускаем колесо загрузки
+                Load.IsRunning = true;
+                Content.IsVisible = false;
+
+                //Если проверка соединения прошла, переходим на главную
+                if (await _checkConnection.Handler(true))
+                    ToMain(sender, e);
+                else
+                    //Возвращаем видимость элементов
+                    Content.IsVisible = true;
+            }
+            catch (Exception ex)
+            {
+                //Устанавливаем текст ошибки
+                Error.Text = ex.Message;
+            }
+            finally
+            {
+                //Останавливаем колесо загрузки
+                Load.IsRunning = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Событие нажатия на кнопку авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void Authorize_Clicked(object sender, EventArgs e)
     {
 		try
@@ -89,12 +132,21 @@ public partial class Authorization : ContentPage
     }
 
     /// <summary>
-    /// Метод перехода на страницу авторизации
+    /// Метод перехода на главную страницу
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private async void ToMain(object? sender, EventArgs? e)
     {
-		await Navigation.PushModalAsync(new Main());
+        await Navigation.PushModalAsync(new Main());
+    }
+
+    /// <summary>
+    /// Метод нажатия кнопки назад
+    /// </summary>
+    /// <returns></returns>
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
     }
 }
