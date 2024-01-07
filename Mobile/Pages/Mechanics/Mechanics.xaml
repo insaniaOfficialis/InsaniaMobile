@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Pages.Mechanics.Mechanics"
+             Background="{StaticResource MainBackground}">
+    <Grid x:Name="Page"
+          RowDefinitions="Auto, *, Auto">
+        <HorizontalStackLayout x:Name="Content"
+                               Grid.Row="0"/>
+        <VerticalStackLayout x:Name="Data"
+                             Grid.Row="1"
+                             VerticalOptions="Start"
+                             Margin="15, 30, 15, 0">
+            <Label x:Name="Title"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Start"
+                   Text="Механики"
+                   Style="{StaticResource TextPrimary}"/>
+            <BoxView BackgroundColor="{StaticResource PrimaryText}"
+                     HorizontalOptions="Fill"
+                     Margin="0, 5, 0, 0"
+                     HeightRequest="1"/>
+            <Label x:Name="Description"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Start"
+                   Margin="0, 10, 0, 0"
+                   Text="В данном разделе содержатся функции для рассчёта, генерации и ведения статистики. Для удобства страница разделена по областям применения"
+                   Style="{StaticResource TextSecondary}"/>
+            <FlexLayout Margin="0, 30, 0, 0"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceBetween">
+                <Button WidthRequest="175"
+                        HeightRequest="60"/>
+                <Border x:Name="System"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="system.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Системное"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Управление&#10;приложением"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="General"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="general.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Общее"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Общеигровое&#10;взимодействие"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Politic"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="politic.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Политика"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Взаимодействие&#10;организаций"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Sociology"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="sociology.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Социология"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Взаимодействие с&#10;обществом"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Culture"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="culture.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Культура"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Взаимодействие с&#10;культурой"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Household"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="household.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Быт"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Взаимодействие с&#10;осбенностями быта"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Economic"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="economic.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Экономика"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Экономическое&#10;взимодействие"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="War"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="war.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Военное дело"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Военное&#10;взимодействие"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Religion"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="religion.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Религия"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Религиозное&#10;взимодействие"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border x:Name="Magic"
+                        Margin="0, 10, 0, 0"
+                        WidthRequest="175"
+                        HeightRequest="60"
+                        Style="{StaticResource BorderPrimary}">
+                    <HorizontalStackLayout>
+                        <Image HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Margin="15, 0, 15, 0"
+                               Source="magic.png"/>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Магия"
+                                   Style="{StaticResource TextPrimary}"/>
+                            <Label Text="Магическое&#10;взимодействие"
+                                   Style="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+            </FlexLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

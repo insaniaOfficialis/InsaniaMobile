@@ -1,3 +1,4 @@
+
 namespace Mobile.Pages.Base.Menu;
 
 /// <summary>
@@ -68,6 +69,9 @@ public partial class BottomMenuMobile : ContentView
             Information.BackgroundColor = Colors.Transparent;
             Information.ImageSource = ImageSource.FromFile("book.png");
         }
+
+        //Переход на главную страницу
+        ToMain(sender, e);
     }
 
     /// <summary>
@@ -130,6 +134,9 @@ public partial class BottomMenuMobile : ContentView
             Information.BackgroundColor = Colors.Transparent;
             Information.ImageSource = ImageSource.FromFile("book.png");
         }
+
+        //Переходим на страницу механик
+        ToMechanics(sender, e);
     }
 
     /// <summary>
@@ -161,5 +168,25 @@ public partial class BottomMenuMobile : ContentView
             Information.Background = (RadialGradientBrush)color;
             Information.ImageSource = ImageSource.FromFile("book_clicked.png");
         }
+    }
+
+    /// <summary>
+    /// Метод перехода на главную страницу
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ToMain(object? sender, EventArgs? e)
+    {
+        await Navigation.PushModalAsync(new Main());
+    }
+
+    /// <summary>
+    /// Метод перехода на страницу авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ToMechanics(object? sender, EventArgs? e)
+    {
+        await Navigation.PushModalAsync(new Mechanics.Mechanics());
     }
 }

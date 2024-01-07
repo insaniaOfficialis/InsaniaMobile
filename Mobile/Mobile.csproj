@@ -119,6 +119,12 @@
 	  <MauiXaml Update="Pages\Base\Menu\TopMenuMobile.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Mechanics\Mechanics.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Borders.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Buttons.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

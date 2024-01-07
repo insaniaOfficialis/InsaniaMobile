@@ -18,7 +18,8 @@
     * Horizontal/Vertical Options
     * Margin/Padding
     * Widght/Height
-  * StackLayout:
+    * Row/Column Definitions
+  * Layout:
     * x:Name/x:Uid
     * Grid.Row/Column
     * Orientations
@@ -41,8 +42,30 @@
     * Clicked
   * BoxView:
     * Grid.Row/Column
+    * Horizontal/Vertical Options
     * Margin/Padding
     * Widght/Height
+    * Background
+  * Label:
+    * x:Name/x:Uid
+    * Grid.Row/Column
+    * Horizontal/Vertical Options
+    * Margin/Padding
+    * Widght/Height
+    * FontFamily
+    * FontSize
+    * TextColor
+    * Text
+    * Style
+  * Border:
+    * x:Name/x:Uid
+    * Grid.Row/Column
+    * Horizontal/Vertical Options
+    * Margin/Padding
+    * Widght/Height
+    * Background
+    * Style
+    * Clicked
 
   * Column
   * Margin
