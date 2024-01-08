@@ -4,14 +4,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Style x:Key="BorderPrimary" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource SecondaryBackground}"/>
-        <Setter Property="Stroke" Value="{StaticResource SecondaryBackground}"/>
-        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
-        <Style.Triggers>
-            <Trigger TargetType="Button" Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="{StaticResource PrimaryBackground}"/>
-            </Trigger>
-        </Style.Triggers>
+        <Setter Property="StrokeThickness" Value="0"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 10, 10, 10, 10"/>
     </Style>
 
 </ResourceDictionary>
