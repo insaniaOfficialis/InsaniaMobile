@@ -49,4 +49,12 @@
         <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
     </Style>
 
+    <Style x:Key="ButtonSixth" TargetType="Button">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Background" Value="{StaticResource SecondaryBackground}"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="{OnIdiom Desktop=15, Phone=15}"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryText}"/>
+    </Style>
+
 </ResourceDictionary>

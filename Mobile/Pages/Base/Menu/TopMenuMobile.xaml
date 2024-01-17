@@ -10,11 +10,11 @@
                      Spacing="10"
                      HorizontalOptions="Start">
             <Border MinimumWidthRequest="50"
-                    MaximumWidthRequest="50"
+                    MaximumWidthRequest="60"
                     HorizontalOptions="Start"
                     Stroke="{StaticResource AvatarBorderGradient}"
                     StrokeThickness="5"
-                    StrokeShape="RoundRectangle 100,100,100,100">
+                    StrokeShape="RoundRectangle 100, 100, 100, 100">
                 <Button x:Name="Avatar"
                         Style="{StaticResource ButtonThird}"/>
             </Border>

@@ -31,6 +31,12 @@ public partial class MenuDesktop : ContentView
             {
                 Mechanics.Style = (Style)style;
                 Mechanics.ImageSource = ImageSource.FromFile("dice_clicked.png");
+
+                //Открываем меню механик
+                Separator.IsVisible = true;
+                MenuMechanics menu = new();
+                Content.Add(menu, 1, 0);
+                menu.SetValue(Grid.RowSpanProperty, 2);
             }
             if (page == "information")
             {
@@ -125,6 +131,8 @@ public partial class MenuDesktop : ContentView
             Information.Style = (Style)styleDefault;
             Information.ImageSource = ImageSource.FromFile("book.png");
         }
+
+        ToMechanics(sender, e);
     }
 
     /// <summary>
@@ -178,5 +186,15 @@ public partial class MenuDesktop : ContentView
     private async void ToAuthorization(object? sender, EventArgs? e)
     {
         await Navigation.PushModalAsync(new Authorization());
+    }
+
+    /// <summary>
+    /// Метод перехода на страницу авторизации
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void ToMechanics(object? sender, EventArgs? e)
+    {
+        await Navigation.PushModalAsync(new Mechanics.Mechanics());
     }
 }

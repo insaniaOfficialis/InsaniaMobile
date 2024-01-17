@@ -4,80 +4,33 @@
 ## Стандарты кода
 
 ### XAML
-* Расположение:
-  * ContentView/ContentPage:
-    * xlmns
-    * x
-    * Horizontal/Vertical Options
-    * Widght/Height
-    * Backgrounds
-    * Loaded
-  * Grid:
-    * x:Name/x:Uid
-    * Grid.Row/Column
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-    * Row/Column Definitions
-  * Layout:
-    * x:Name/x:Uid
-    * Grid.Row/Column
-    * Orientations
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-  * Button:
-    * x:Name/x:Uid
-    * Grid.Row/Column
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-    * CornerRadius
-    * Background
-    * FontFamily
-    * FontSize
-    * TextColor
-    * Image/Text
-    * Style
-    * Clicked
-  * BoxView:
-    * Grid.Row/Column
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-    * Background
-  * Label:
-    * x:Name/x:Uid
-    * Grid.Row/Column
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-    * FontFamily
-    * FontSize
-    * TextColor
-    * Text
-    * Style
-  * Border:
-    * x:Name/x:Uid
-    * Grid.Row/Column
-    * Horizontal/Vertical Options
-    * Margin/Padding
-    * Widght/Height
-    * Background
-    * Style
-    * Clicked
+  * xlmns
+  * x:Name/x:Uid
+  * Grid.Row/Column
+  * IsVisible
 
-  * Column
-  * Margin
-  * Padding
-  * Aligment
-* Свойства:
-  * Backgond
-  * Boeder
-  * Font
-  * ContentAligment
-* Стили
-* События
+  * Horizontal/Vertical Options
+  * Margin/Padding
+  * Widght/Height
+
+  * Row/Column Definitions
+  * Orientations
+  * Wrap
+  * JustifyContent
+  * CornerRadius
+  * SelectionMode
+  * SelectionChanged
+
+  * Backgrounds
+  * FontFamily
+  * FontSize
+  * TextColor
+
+  * Image/Text
+  * Style
+
+  * Loaded    
+  * Clicked 
 
 ### CS
 * Атрибуты

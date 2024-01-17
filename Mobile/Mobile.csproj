@@ -101,6 +101,9 @@
 	  <Compile Update="Pages\Base\Menu\BottomMenuMobile.xaml.cs">
 	    <DependentUpon>BottomMenuMobile.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\Base\Menu\MenuMechanics.xaml.cs">
+	    <DependentUpon>MenuMechanics.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -108,6 +111,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Base\Main.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Base\Menu\MenuMechanics.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Base\Menu\MenuDesktop.xaml">

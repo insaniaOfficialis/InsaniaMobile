@@ -4,10 +4,10 @@
              x:Class="Mobile.Pages.Base.Main"
              Title="Main"
              Background="{StaticResource MainBackground}">
-    <Grid x:Name="Page"
-          RowDefinitions="*, Auto">
-        <HorizontalStackLayout x:Name="Content">
-
+    <Grid x:Name="GridContent"
+          RowDefinitions="Auto, *, Auto">
+        <HorizontalStackLayout>
+            
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

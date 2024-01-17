@@ -5,9 +5,12 @@
              x:Class="Mobile.Pages.Base.Menu.MenuDesktop"
              HorizontalOptions="Start"
              Background="{StaticResource SecondaryBackground}">
-    <Grid VerticalOptions="Fill"
-          RowDefinitions="*,Auto">
+    <Grid x:Name="Content"
+          VerticalOptions="Fill"
+          RowDefinitions="*,Auto"
+          ColumnDefinitions="Auto,*">
         <VerticalStackLayout Grid.Row="0"
+                             Grid.Column="0"
                              VerticalOptions="Start">
             <menu:TopMenuMobile/>
             <VerticalStackLayout Spacing="10">
@@ -43,8 +46,10 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="0"
                              VerticalOptions="End">
-            <BoxView WidthRequest="300"
+            <BoxView BackgroundColor="{StaticResource PrimaryText}"
+                     WidthRequest="300"
                      HeightRequest="1"/>
             <Button x:Name="InformationArticles"
                     HorizontalOptions="FillAndExpand"
@@ -74,5 +79,12 @@
                     Style="{StaticResource ButtonFourth}"
                     Clicked="Out_Clicked"/>
         </VerticalStackLayout>
+        <BoxView x:Name="Separator"
+                 Grid.RowSpan="2"
+                 Grid.Column="0"
+                 IsVisible="False"
+                 HorizontalOptions="End"
+                 WidthRequest="1"
+                 Background="{StaticResource SecondaryButton}"/>
     </Grid>
 </ContentView>

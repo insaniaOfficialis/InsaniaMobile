@@ -3,66 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile.Pages.Mechanics.Mechanics"
              Background="{StaticResource MainBackground}">
-    <Grid x:Name="Page"
+    <Grid x:Name="GridContent"
           RowDefinitions="Auto, *, Auto">
-        <HorizontalStackLayout x:Name="Content"
-                               Grid.Row="0"/>
-        <VerticalStackLayout x:Name="Data"
-                             Grid.Row="1"
-                             VerticalOptions="Start"
-                             Margin="15, 30, 15, 0">
-            <Label x:Name="Title"
-                   HorizontalOptions="Fill"
-                   VerticalOptions="Start"
-                   Text="Механики"
-                   Style="{StaticResource TextPrimary}"/>
-            <BoxView BackgroundColor="{StaticResource PrimaryText}"
-                     HorizontalOptions="Fill"
-                     Margin="0, 5, 0, 0"
-                     HeightRequest="1"/>
-            <Label x:Name="Description"
-                   HorizontalOptions="Fill"
-                   VerticalOptions="Start"
-                   Margin="0, 10, 0, 0"
-                   Text="В данном разделе содержатся функции для рассчёта, генерации и ведения статистики. Для удобства страница разделена по областям применения"
-                   Style="{StaticResource TextSecondary}"/>
-            <CollectionView x:Name="Sections"
-                            Margin="0, 30, 0, 0"
-                            SelectionMode ="Single"
-                            SelectionChanged="Sections_SelectionChanged">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border WidthRequest="175"
-                                HeightRequest="60"
-                                Background="{Binding Color}"
-                                Style="{StaticResource BorderPrimary}">
-                            <HorizontalStackLayout>
-                                <Image HorizontalOptions="Start"
-                                        VerticalOptions="Center"
-                                        Margin="15, 0, 15, 0"
-                                        Source="{Binding File}"/>
-                                <VerticalStackLayout VerticalOptions="Center">
-                                    <Label Text="{Binding Title}"
-                                            Style="{StaticResource TextPrimary}"/>
-                                    <Label Text="{Binding Description}"
-                                            Style="{StaticResource TextSecondary}"/>
-                                </VerticalStackLayout>
-                            </HorizontalStackLayout>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup Name="CommonStates">
-                                    <VisualState Name="Normal"></VisualState>
-                                    <VisualState Name="Selected">
-                                        <VisualState.Setters>
-                                            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
-                                        </VisualState.Setters>
-                                    </VisualState>
+        <HorizontalStackLayout>
 
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>

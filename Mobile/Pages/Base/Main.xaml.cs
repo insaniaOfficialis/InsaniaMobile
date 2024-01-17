@@ -18,34 +18,22 @@ public partial class Main : ContentPage
         //Если мобильное устройство
 		if(DeviceInfo.Idiom == DeviceIdiom.Phone)
 		{
-            //Устанавливаем нижнее меню
-			StackLayout bottomMenuContent = new()
-			{
-				VerticalOptions = LayoutOptions.End
-			};
-            BottomMenuMobile bottomMenu = new("main");
-            bottomMenuContent.Children.Add(bottomMenu);
-            Page.Children.Add(bottomMenu);
-
             //Устанаваливаем верхнее меню
-            StackLayout topMenuContent = new()
-            {
-                VerticalOptions = LayoutOptions.Start
-            };
             TopMenuMobile topMenu = new(true);
-            topMenuContent.Children.Add(topMenu);
-            Page.Children.Add(topMenuContent);
+            GridContent.Add(topMenu, 0, 0);
+
+            //Устанавливаем нижнее меню
+            BottomMenuMobile bottomMenu = new("main");
+            GridContent.Add(bottomMenu, 0, 2);
         }
 
         //Если пк
         if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
         {
             //Устанавливаем меню
-            MenuDesktop menu = new("")
-            {
-                Padding = new Thickness(0, 10, 0, 0)
-            };
-            Content.Children.Add(menu);
+            MenuDesktop menu = new("main");
+            GridContent.Add(menu);
+            menu.SetValue(Grid.RowSpanProperty, 3);
         }
     }
 

@@ -76,6 +76,9 @@ public partial class Authorization : ContentPage
             }
             catch (Exception ex)
             {
+                //Возвращаем видимость элементов
+                Content.IsVisible = true;
+
                 //Устанавливаем текст ошибки
                 Error.Text = ex.Message;
             }
